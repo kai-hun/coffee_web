@@ -1,38 +1,94 @@
-.App {
+.app-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  justify-items: center;
+}
+
+.product-item {
+  cursor: pointer;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.product-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.product-name {
+  margin-top: 10px;
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* 판매처 리스트 - 애니메이션 & 한 줄 유지 */
+.seller-list-inline {
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  background-color: #f0f0f0;
+  padding: 0 15px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: left;
+  max-height: 0;
+  opacity: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.seller-list-inline.open {
+  padding: 10px 15px;
+  max-height: 500px;
+  opacity: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.seller-list-inline ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.seller-list-inline li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  list-style-type: disc;
+}
+
+/* 둥근 흰 배경 버튼 스타일 */
+.rounded-button {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.rounded-button:hover {
+  background-color: #eee;
+}
+
+.menu-button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.large-button {
+  font-size: 18px;
+  padding: 20px;
 }

@@ -1,5 +1,6 @@
 {
   "name": "client-new",
+  "homepage": "https://kai-hun.github.io/coffee_web",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
